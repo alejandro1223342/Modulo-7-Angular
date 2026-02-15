@@ -1,0 +1,9 @@
+Pasos
+
+ng new (nombre del proyecto)
+
+-levantar proyecto
+ng serve
+
+crear componentes
+ ng generate component (ruta y nombre del componente)
