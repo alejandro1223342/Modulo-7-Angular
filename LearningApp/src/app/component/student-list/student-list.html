@@ -1,0 +1,8 @@
+<div class="student-list">
+  <h3>Alumnos</h3>
+  <ul>
+    <li *ngFor="let s of students">
+      <app-student-item [student]="s"></app-student-item>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of items; track $index) {
+        <tr app-invoice-item [item]="item"></tr>
+        }
+    </tbody>
+</table>

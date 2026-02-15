@@ -7,48 +7,13 @@
             </ul>
         </div>
         <div>
-            <h3>Empresa</h3>
-            <ul>
-                <li>RUC: {{invoice.company.ruc}}</li>
-                <li>Nombre: {{invoice.company.name}}</li>
-                <li>Direccion: {{invoice.company.address.city}} -
-                    {{invoice.company.address.principalStreet}} -
-                    {{invoice.company.address.secondaryStreet}} -
-                    {{invoice.company.address.code}}
-                </li>
-            </ul>
+            <app-company-view [company]="invoice.company"></app-company-view>
         </div>
         <div>
-            <h3>Cliente</h3>
-            <ul>
-                <li>RUC: {{invoice.customer.id}}</li>
-                <li>Nombre: {{invoice.customer.name}} {{invoice.customer.surName}}</li>
-                <li>Direccion: {{invoice.customer.address.city}} -
-                    {{invoice.customer.address.principalStreet}} -
-                    {{invoice.customer.address.secondaryStreet}}
-                </li>
-            </ul>
+            <app-customer-view [customer]="invoice.customer"></app-customer-view>
         </div>
         <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (item of invoice.items; track $index) {
-                    <tr>
-                        <td>{{$index}}</td>
-                        <td>{{item.product.name}}</td>
-                        <td>{{item.product.price}}</td>
-                        <td>{{item.quantity}}</td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+            <app-invoice-detail [items]="invoice.items"></app-invoice-detail>
         </div>
     </div>
 </div>
