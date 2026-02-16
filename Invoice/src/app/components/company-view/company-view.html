@@ -1,10 +1,11 @@
-<h3>Empresa</h3>
-<ul>
-    <li>RUC: {{company.ruc}}</li>
-    <li>Nombre: {{company.name}}</li>
-    <li>Direccion: {{company.address.city}} -
-        {{company.address.principalStreet}} -
-        {{company.address.secondaryStreet}} -
-        {{company.address.code}}
-    </li>
-</ul>
+<div class="card h-100 border-0">
+    <div class="card-body p-0">
+        <h5 class="card-title text-secondary">Empresa</h5>
+        <ul class="list-unstyled">
+            <li><strong>RUC:</strong> {{company.ruc}}</li>
+            <li><strong>Nombre:</strong> {{company.name}}</li>
+            <li><strong>Dirección:</strong> {{company.address.city}}, {{company.address.principalStreet}} y
+                {{company.address.secondaryStreet}} ({{company.address.code}})</li>
+        </ul>
+    </div>
+</div>

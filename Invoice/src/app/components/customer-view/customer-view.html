@@ -1,9 +1,11 @@
-<h3>Cliente</h3>
-<ul>
-    <li>RUC: {{customer.id}}</li>
-    <li>Nombre: {{customer.name}} {{customer.surName}}</li>
-    <li>Direccion: {{customer.address.city}} -
-        {{customer.address.principalStreet}} -
-        {{customer.address.secondaryStreet}}
-    </li>
-</ul>
+<div class="card h-100 border-0">
+    <div class="card-body p-0">
+        <h5 class="card-title text-secondary">Cliente</h5>
+        <ul class="list-unstyled">
+            <li><strong>RUC:</strong> {{customer.id}}</li>
+            <li><strong>Nombre:</strong> {{customer.name}} {{customer.surName}}</li>
+            <li><strong>Dirección:</strong> {{customer.address.city}}, {{customer.address.principalStreet}} y
+                {{customer.address.secondaryStreet}}</li>
+        </ul>
+    </div>
+</div>
