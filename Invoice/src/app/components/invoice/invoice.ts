@@ -15,6 +15,15 @@ export class InvoiceComponent implements OnInit {
   constructor(private service: InvoiceService) { }
 
   ngOnInit(): void {
-    this.invoice = this.service.getInvoice();
+    this.service.getInvoice().subscribe(
+      (data: Invoice) => {
+        this.invoice = data;
+        console.log('Datos recibidos del backend:', data);
+      },
+      (error) => {
+        console.error('Error al obtener datos del backend:', error);
+        console.error('Asegúrate de que el backend está en puerto 3000');
+      }
+    );
   }
 }
