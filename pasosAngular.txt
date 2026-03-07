@@ -7,3 +7,64 @@ ng serve
 
 crear componentes
  ng generate component (ruta y nombre del componente)
+
+ng g s mi-servicio
+
+
+#pasos Docker contenedor interactivo
+docker run -it --name ubuntu-server02 alejoss12/uSbuntu_alejandro:vv1.0 /bin/bash
+
+
+1. Crear la Imagen (Dockerfile)
+La forma más limpia de cumplir con el primer punto es crear un archivo llamado Dockerfile en una carpeta vacía con este contenido:
+
+Dockerfile
+FROM ubuntu:latest
+RUN apt update && apt install -y iputils-ping
+Luego, construye la imagen usando tu nombre y el formato solicitado. Recuerda que para subirla a DockerHub, el nombre debe incluir tu usuario (alejoss12):
+
+Comando: docker build -t alejoss12/ubuntu-alejandro-v1 .
+
+2. Subir la imagen a DockerHub
+Para este paso, necesitas estar logueado en tu cuenta desde la terminal:
+
+Iniciar sesión: docker login
+
+Subir imagen: docker push alejoss12/ubuntu-alejandro-v1
+
+3. Crear y gestionar el contenedor
+Ahora crearás el contenedor con el nombre específico que pide el reto, usando la imagen que acabas de generar:
+
+Comando: docker run -it --name Ubuntu-networktools-Alejandro alejoss12/ubuntu-alejandro-v1 /bin/bash
+
+(Dentro del contenedor, puedes probar que el paquete funciona escribiendo ping google.com).
+
+4. Lista de comandos utilizados (Resumen para entregar)
+Como el punto 4 pide compartir los comandos, aquí tienes el resumen listo para copiar:
+
+Construcción: docker build -t alejoss12/ubuntu-alejandro-v1 .
+
+Login: docker login
+
+Push: docker push alejoss12/ubuntu-alejandro-v1
+
+Ejecución: docker run -it --name Ubuntu-networktools-Alejandro alejoss12/ubuntu-alejandro-v1 /bin/bash
+
+
+
+
+//Contenedor de proyecto
+docker run -it -p 4200:4200 --name fashion-trends-dev fashion-trends-dev
+
+docker build -t fashion-trends-dev .
+
+docker run -it -p 4200:4200 --name fashion-trends-dev fashion-trends-dev
+
+//Docker Hub
+
+docker login
+
+docker tag fashion-trends-dev TU_USUARIO/fashion-trends:v1
+
+
+

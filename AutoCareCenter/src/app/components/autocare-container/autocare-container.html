@@ -1,0 +1,8 @@
+<div>
+    <app-company-header *ngIf="autoCareData" [company] ="autoCareData.company"></app-company-header>
+
+    <h2> Gestion de Servicios y Capacidad</h2>
+    <app-service-list *ngIf="autoCareData" [services]="autoCareData.services"> </app-service-list>
+
+    <app-capacity-summary [totalCapacity]="totalCapacity"></app-capacity-summary>
+</div>

@@ -1,0 +1,21 @@
+<h3>Listado de Servicios Disponibles</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Tipo</th>
+            <th>Sucursal</th>
+            <th>Capacidad diaria (Vehículos)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let service of services">
+            <tr *ngFor="let cap of service.capacities">
+                <td>{{service.name}}</td>
+                <td>{{service.type}}</td>
+                <td>{{cap.branchName}}</td>
+                <td>{{cap.capacity}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

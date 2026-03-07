@@ -1,0 +1,7 @@
+<div *ngIf="company">
+    <h1>{{company.name}}</h1>
+    <p><strong>RUC:</strong> {{company.ruc}}</p>
+    <p><strong>Dirección:</strong> {{company.address.principalStreet}} {{company.address.secondaryStreet}},
+        {{company.address.city}}</p>
+</div>
+<hr>

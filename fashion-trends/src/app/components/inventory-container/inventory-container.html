@@ -1,0 +1,8 @@
+<div style="padding: 20px;">
+    <app-company-header *ngIf="inventoryData" [company]="inventoryData.company"></app-company-header>
+
+    <h3>Inventario</h3>
+    <app-product-list *ngIf="inventoryData" [products]="inventoryData.products"></app-product-list>
+
+    <app-stock-summary [totalStock]="totalStock"></app-stock-summary>
+</div>

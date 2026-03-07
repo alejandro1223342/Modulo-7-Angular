@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: ./backFashion
+    container_name: backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backFashion:/app
+      - /app/node_modules
+    networks:
+      - appnet
+
+  frontend:
+    build: "./fashion-trends - copia"
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - "./fashion-trends - copia:/app"
+      - /app/node_modules
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge

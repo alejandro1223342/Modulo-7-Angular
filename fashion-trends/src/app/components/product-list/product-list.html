@@ -1,0 +1,22 @@
+<h3>Listado de Inventario</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Categoría</th>
+            <th>Sucursal</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let product of products">
+            <tr *ngFor="let branch of product.stocks">
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{branch.branchName}}</td>
+                <td>{{branch.stock}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+<br>
